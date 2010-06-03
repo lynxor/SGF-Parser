@@ -7,6 +7,12 @@ import com.goai.sgf.element.SGFElement;
  * @author dawid.malan
  */
 public enum Property implements SGFElement{
+    PLAYER("PL"),
+    MOVE_NUMBER("MN"),
+    FORCE_MOVE("KO"),
+    SIZE("SZ"),
+    CREATED_BY("AP"),
+    GAME("GM"),
     BLACK_RANK("BR"),
     WHITE_RANK("WR"),
     DATE("DT"),

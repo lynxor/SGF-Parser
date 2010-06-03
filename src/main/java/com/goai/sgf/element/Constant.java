@@ -35,4 +35,11 @@ public enum Constant implements SGFElement {
     public String getTextValue() {
         return String.valueOf(match);
     }
+
+    @Override
+    public String toString() {
+        return getTextValue();
+    }
+
+
 }

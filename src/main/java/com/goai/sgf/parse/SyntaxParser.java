@@ -14,13 +14,8 @@ import java.util.List;
  */
 public class SyntaxParser {
 
-    private final String parseString;
 
-    public SyntaxParser(String parseString) {
-        this.parseString = parseString;
-    }
-
-    public List<SGFElement> parse() {
+    public static List<SGFElement> parse(String parseString) {
         List<SGFElement> list = Lists.newArrayList();
         List<Character> cache = Lists.newArrayList();
         Constant prevConstant = NONE;
@@ -50,9 +45,9 @@ public class SyntaxParser {
         return list;
     }
 
-    void handleCache(List<SGFElement> elements, List<Character> cache, Constant previous) {
-        if (cache.size() != 0) {
-            String cacheString = Joiner.on("").join(cache);
+    static void handleCache(List<SGFElement> elements, List<Character> cache, Constant previous) {
+        if(cache.size() != 0){
+             String cacheString = Joiner.on("").join(cache);
 
             if(previous == PROP_START){
                 elements.add(SGFElements.getPropertyValue(cacheString));
@@ -61,6 +56,11 @@ public class SyntaxParser {
                 elements.add(SGFElements.getProperty(cacheString));
             }
             cache.clear();
+
         }
+        else if(previous == PROP_START){
+            elements.add(SGFElements.getPropertyValue("")); 
+        }
+           
     }
 }

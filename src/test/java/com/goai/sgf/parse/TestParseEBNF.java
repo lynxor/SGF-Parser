@@ -34,22 +34,22 @@ public class TestParseEBNF {
         Assert.assertEquals("bb", node.getProperties().get(0).getValue().getTextValue());
     }
 
-//    @Test
-//    public void testParseGameTree(){
-//        List<SGFElement> list = Lists.newArrayList(
-//                BRANCH_START,
-//                NODE_START,
-//                BLACK,
-//                PROP_START,
-//                new PropertyValue("bb", PropertyValue.PropertyType.MOVE, PropertyValueType.POINT),
-//                PROP_END,
-//                BRANCH_END);
-//
-//        BNFParser parser = new BNFParser(list);
-//        GameTree gt = parser.parseGametree();
-//
-//        Assert.assertEquals(BLACK,gt.getSequence().getNodes().get(0).getProperties().get(0).getProperty());
-//    }
+    @Test
+    public void testParseGameTree(){
+        List<SGFElement> list = Lists.newArrayList(
+                BRANCH_START,
+                NODE_START,
+                BLACK,
+                PROP_START,
+                new PropertyValue("bb", PropertyValue.PropertyType.MOVE, PropertyValueType.POINT),
+                PROP_END,
+                BRANCH_END);
+
+        BNFParser parser = new BNFParser(list);
+        GameTree gt = parser.parseGametree();
+
+        Assert.assertEquals(BLACK,gt.getSequence().getNodes().get(0).getProperties().get(0).getProperty());
+    }
     
 
     

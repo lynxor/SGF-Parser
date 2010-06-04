@@ -23,8 +23,17 @@ public class FullParse {
     public void testCollection() throws IOException{
        InputStream is = FullParse.class.getResourceAsStream("judan_collection.sgf");
        GameTreeCollection collection =  SGFParser.parse(is);
-         System.out.println(collection);
-      // Assert.assertEquals(20, collection.getGametrees().size());
+
+       Assert.assertEquals(30, collection.getGametrees().size());
 
     }
+    @Test
+    public void testMultigame() throws IOException{
+       InputStream is = FullParse.class.getResourceAsStream("multigame.sgf");
+       GameTreeCollection collection =  SGFParser.parse(is);
+
+       Assert.assertEquals(2, collection.getGametrees().size());
+
+    }
+
 }

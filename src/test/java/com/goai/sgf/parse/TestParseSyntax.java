@@ -5,10 +5,7 @@ import com.goai.sgf.element.SGFElement;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.io.CharStreams;
-
 import static com.goai.sgf.element.Constant.*;
-import static com.goai.sgf.element.property.Property.*;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

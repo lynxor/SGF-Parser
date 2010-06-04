@@ -8,7 +8,7 @@
     <name>sgf-parser</name>
     <url>http://maven.apache.org</url>
     <dependencies>
-        
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -41,9 +41,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.rorotika</groupId>
-            <artifactId>rorotika-datastructures</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r05</version>
         </dependency>
         
     </dependencies>

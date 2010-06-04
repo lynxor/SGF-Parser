@@ -36,7 +36,9 @@ public class BNFParser {
         List<GameTree> gametrees = Lists.newArrayList();
 
         for (; index < elements.size(); index++) {
+
             SGFElement element = elements.get(index);
+            System.out.println("IN PARSE "+element);
             if (element == BRANCH_START) {
                 gametrees.add(parseGametree());
             }
@@ -57,18 +59,18 @@ public class BNFParser {
         while(stack.size() != 0) {
            
             SGFElement element = elements.get(index);
-           // System.out.println("INWHILE "+stack.size());
+
             if (element == NODE_START) {
                 nodes.add(parseNode());
             } else if (element == BRANCH_START) {
                 gametrees.add(parseGametree());
             }
             else if(element == BRANCH_END){
-                System.out.println("popping "+stack.size());
                 stack.pop();
             }
             index++;
         }
+        index--;
         return new GameTree(new Sequence(nodes), gametrees);
     }
 

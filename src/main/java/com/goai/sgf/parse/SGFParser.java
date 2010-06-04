@@ -19,7 +19,6 @@ public class SGFParser {
 
         String str = Joiner.on("").join(CharStreams.readLines(new InputStreamReader(is)));
         List<SGFElement> elements = SyntaxParser.parse(str);
-
         BNFParser parser = new BNFParser(elements);
         return parser.parse();
     }

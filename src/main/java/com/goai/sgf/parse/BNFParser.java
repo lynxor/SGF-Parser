@@ -35,7 +35,7 @@ public class BNFParser {
     public GameTreeCollection parse() {
         List<GameTree> gametrees = Lists.newArrayList();
 
-        for (; index < elements.size(); index++) {
+        for (index = 0; index < elements.size(); index++) {
 
             SGFElement element = elements.get(index);
             System.out.println("IN PARSE "+element);

@@ -13,7 +13,7 @@ public class GameTreeCollection implements EBNFNode,Iterable<GameTree>{
     private final List<GameTree> gametrees;
 
     public GameTreeCollection(List<GameTree> gametrees) {
-        Preconditions.checkArgument(gametrees.size() != 0,"Collections consist of at least one game tree");
+        Preconditions.checkArgument(!gametrees.isEmpty(), "Collections consist of at least one game tree");
         this.gametrees = gametrees;
     }
 
